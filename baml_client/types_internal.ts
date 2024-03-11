@@ -4,7 +4,8 @@
 // tslint:disable
 // @ts-nocheck
 
-import { Category, Resume, Education } from './types';
+
+import { Education, Category, Resume } from './types';
 
 
 // Function to check if a value is a member of the Category enum

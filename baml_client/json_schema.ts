@@ -4,7 +4,8 @@
 // tslint:disable
 // @ts-nocheck
 
-import { registerObjectDeserializer, registerEnumDeserializer } from '@boundaryml/baml-core/deserializer/deserializer';
+
+import { registerEnumDeserializer, registerObjectDeserializer } from '@boundaryml/baml-core/deserializer/deserializer';
 import { JSONSchema7 } from 'json-schema';
 
 

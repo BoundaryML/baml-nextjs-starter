@@ -1,0 +1,8 @@
+{
+    "expected_tests": [
+        ["jason", "version1", "ExtractResume"],
+        ["sarah", "version1", "ExtractResume"],
+        ["blue_dolphin", "level1", "ClassifyMessage"],
+        ["case1", "level1", "ClassifyMessage"]
+    ]
+}

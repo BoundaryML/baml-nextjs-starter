@@ -4,7 +4,8 @@
 // tslint:disable
 // @ts-nocheck
 
-import { Resume, Category } from './types';
+
+import { Category, Resume } from './types';
 import { FireBamlEvent, traceAsync } from '@boundaryml/baml-core/ffi_layer';
 
 
