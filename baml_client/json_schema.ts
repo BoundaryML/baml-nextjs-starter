@@ -3,15 +3,115 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 
 import { registerEnumDeserializer, registerObjectDeserializer } from '@boundaryml/baml-core/deserializer/deserializer';
 import { JSONSchema7 } from 'json-schema';
 
 
-const schema: JSONSchema7 = {"definitions":{"Category":{"title":"Category","enum":[{"const":"Refund"},{"const":"CancelOrder"},{"const":"TechnicalSupport"},{"const":"AccountIssue"},{"const":"Question"}]},"Education":{"title":"Education","type":"object","properties":{"school":{"type":"string"},"degree":{"type":"string"},"year":{"type":"integer"}},"required":["school","degree","year"]},"Resume":{"title":"Resume","type":"object","properties":{"name":{"type":"string"},"education":{"type":"array","items":{"$ref":"#/definitions/Education"}},"skills":{"type":"array","items":{"type":"string"}}},"required":["name","education","skills"]},"ClassifyMessage_input":{"type":"object","properties":{"message":{"type":"string"},"message_date":{"type":"string"}},"required":[],"title":"ClassifyMessage input"},"ExtractResume_input":{"type":"string","title":"ExtractResume input"},"ClassifyMessage_output":{"type":"array","items":{"$ref":"#/definitions/Category"},"title":"ClassifyMessage output"},"ExtractResume_output":{"$ref":"#/definitions/Resume","title":"ExtractResume output"}}};
+const schema: JSONSchema7 = {
+  "definitions": {
+    "Category": {
+      "title": "Category",
+      "enum": [
+        {
+          "const": "Refund"
+        },
+        {
+          "const": "CancelOrder"
+        },
+        {
+          "const": "TechnicalSupport"
+        },
+        {
+          "const": "AccountIssue"
+        },
+        {
+          "const": "Question"
+        }
+      ]
+    },
+    "Education": {
+      "title": "Education",
+      "type": "object",
+      "properties": {
+        "school": {
+          "type": "string"
+        },
+        "degree": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "school",
+        "degree",
+        "year"
+      ]
+    },
+    "Resume": {
+      "title": "Resume",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Education"
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "education",
+        "skills"
+      ]
+    },
+    "ClassifyMessage_input": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "message_date": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "ClassifyMessage input"
+    },
+    "ExtractResume_input": {
+      "type": "string",
+      "title": "ExtractResume input"
+    },
+    "ClassifyMessage_output": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Category"
+      },
+      "title": "ClassifyMessage output"
+    },
+    "ExtractResume_output": {
+      "$ref": "#/definitions/Resume",
+      "title": "ExtractResume output"
+    }
+  }
+};
 
-registerEnumDeserializer(schema.definitions.Category, { });
+registerEnumDeserializer(schema.definitions.Category, {
+
+});
 
 registerObjectDeserializer(schema.definitions.Education, { });
 

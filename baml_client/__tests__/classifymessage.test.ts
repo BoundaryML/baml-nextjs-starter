@@ -3,6 +3,7 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 import b from '../';
 
@@ -14,21 +15,19 @@ describe('test_case:blue_dolphin', () => {
     FireBamlEvent.tags({
       'test_dataset_name': 'ClassifyMessage',
       'test_case_name': 'test',
-      'test_case_arg_name': `blue_dolphin[${impl}]`,
+      'test_case_arg_name': `test_blue_dolphin[ClassifyMessage-${impl}]`,
       'test_cycle_id': process.env.BOUNDARY_PROCESS_ID || 'local-run',
     });
-    const test_case = {"message":"This is so frustrating, i bought a laptop and it's not working properly. I want to return it and get my money back. I'm so disappointed","message_date":"2019-01-01T00:00:00Z"};
+    const test_case = { "message": "This is so frustrating, i bought a laptop and it\'s not working properly. I want to return it and get my money back. I\'m so disappointed", "message_date": "2019-01-01T00:00:00Z" };
     const result = await b.ClassifyMessage.getImpl(impl).run(
       test_case
     );
-
-    return null;
   });
 
   describe('function:ClassifyMessage', () => {
     test('impl:level1', async () => {
       await test_fn('level1');
-    });
+    }, 60000);
   });
 });
 
@@ -37,19 +36,19 @@ describe('test_case:case1', () => {
     FireBamlEvent.tags({
       'test_dataset_name': 'ClassifyMessage',
       'test_case_name': 'test',
-      'test_case_arg_name': `case1[${impl}]`,
+      'test_case_arg_name': `test_case1[ClassifyMessage-${impl}]`,
       'test_cycle_id': process.env.BOUNDARY_PROCESS_ID || 'local-run',
     });
-    const test_case = {"message":"Hi! I'm having an issue with my account. Can you help me?","message_date":"2019-01-01T00:00:00Z"};
+    const test_case = { "message": "Hi! I\'m having an issue with my account. Can you help me?", "message_date": "2019-01-01T00:00:00Z" };
     const result = await b.ClassifyMessage.getImpl(impl).run(
       test_case
     );
-    return null;
   });
 
   describe('function:ClassifyMessage', () => {
     test('impl:level1', async () => {
       await test_fn('level1');
-    });
+    }, 60000);
   });
 });
+

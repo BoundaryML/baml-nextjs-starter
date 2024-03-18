@@ -3,6 +3,7 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 
 import { GPT4 } from '../client';
@@ -38,8 +39,8 @@ const deserializer = new Deserializer<Resume>(schema, {
 });
 
 ExtractResume.registerImpl('version1', async (
-arg: string
-  ): Promise<Resume> => {
+  arg: string
+): Promise<Resume> => {
   
     const result = await GPT4.run_prompt_template(
       prompt_template,
@@ -54,3 +55,4 @@ arg: string
     return deserializer.coerce(result.generated);
   }
 );
+

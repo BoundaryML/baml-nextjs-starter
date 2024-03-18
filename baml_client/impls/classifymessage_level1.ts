@@ -3,6 +3,7 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 
 import { GPT4 } from '../client';
@@ -38,26 +39,27 @@ const deserializer = new Deserializer<Category[]>(schema, {
 });
 
 ClassifyMessage.registerImpl('level1', async (
-args: {
-  message: string, message_date: string
-}
-  ): Promise<Category[]> => {
-  const message = args.message;
-  const message_date = args.message_date;
+  args: {
+    message: string, message_date: string
+  }
+): Promise<Category[]> => {
+    const message = args.message;
+    const message_date = args.message_date;
   
     const result = await GPT4.run_prompt_template(
       prompt_template,
       [
-        "{//BAML_CLIENT_REPLACE_ME_MAGIC_input.message_date//}",
-      
         "{//BAML_CLIENT_REPLACE_ME_MAGIC_input.message//}",
+      
+        "{//BAML_CLIENT_REPLACE_ME_MAGIC_input.message_date//}",
       ],
       {
-        "{//BAML_CLIENT_REPLACE_ME_MAGIC_input.message_date//}": message_date,
         "{//BAML_CLIENT_REPLACE_ME_MAGIC_input.message//}": message,
+        "{//BAML_CLIENT_REPLACE_ME_MAGIC_input.message_date//}": message_date,
       }
     );
 
     return deserializer.coerce(result.generated);
   }
 );
+

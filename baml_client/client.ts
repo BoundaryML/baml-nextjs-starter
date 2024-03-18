@@ -3,10 +3,14 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 
 import { clientManager } from '@boundaryml/baml-core/client_manager';
 
+
+import dotenv from 'dotenv';
+    let env = dotenv.config();
 
 const GPT3 = clientManager.createClient('GPT3', 'baml-openai-chat', {
     model: "gpt-3",

@@ -3,6 +3,10 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
+
+import dotenv from 'dotenv';
+let env = dotenv.config();
 
 import * as f from "./function"
 import "./impls"
@@ -13,3 +17,4 @@ const BamlClient = {
 }
 
 export default BamlClient
+

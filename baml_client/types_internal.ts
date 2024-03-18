@@ -3,9 +3,10 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 
-import { Education, Category, Resume } from './types';
+import { Category, Education, Resume } from './types';
 
 
 // Function to check if a value is a member of the Category enum

@@ -3,7 +3,9 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 import './classifymessage_level1';
 
 import './extractresume_version1';
+

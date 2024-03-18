@@ -3,6 +3,7 @@
 // Disable formatting for this file to avoid linting errors.
 // tslint:disable
 // @ts-nocheck
+/* eslint-disable */
 
 
 import { Category, Resume } from './types';
@@ -62,7 +63,7 @@ function createClassifyMessageInstance(): IClassifyMessage & ClassifyMessageFunc
             message: string, message_date: string
           }
         ) => {
-          FireBamlEvent.variant("");
+          FireBamlEvent.variant(name);
           return await cb(params);
         })
       };
@@ -135,7 +136,7 @@ function createExtractResumeInstance(): IExtractResume & ExtractResumeFunction {
           /* cb */ async (
           arg: string
         ) => {
-          FireBamlEvent.variant("");
+          FireBamlEvent.variant(name);
           return await cb(arg);
         })
       };
