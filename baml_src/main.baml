@@ -5,7 +5,7 @@ generator lang_typescript {
   project_root "../"
   // This command is used by "baml test" to run tests
   // defined in the playground
-  test_command "infisical run -- npm run baml-test --"
+  test_command "npm run baml-test --"
   // This command is used by "baml update-client" to install
   // dependencies to your language environment
   install_command "npm install"
