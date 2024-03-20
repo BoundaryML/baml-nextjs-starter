@@ -31,6 +31,27 @@ describe('test_case:blue_dolphin', () => {
   });
 });
 
+describe('test_case:cancel_order', () => {
+  const test_fn = traceAsync('cancel_order', 'null', [['impl', 'string']], 'positional', async (impl) => {
+    FireBamlEvent.tags({
+      'test_dataset_name': 'ClassifyMessage',
+      'test_case_name': 'test',
+      'test_case_arg_name': `test_cancel_order[ClassifyMessage-${impl}]`,
+      'test_cycle_id': process.env.BOUNDARY_PROCESS_ID || 'local-run',
+    });
+    const test_case = { "message": "I would like to cancel my order!", "message_date": "2021-01-01T00:00:00Z" };
+    const result = await b.ClassifyMessage.getImpl(impl).run(
+      test_case
+    );
+  });
+
+  describe('function:ClassifyMessage', () => {
+    test('impl:level1', async () => {
+      await test_fn('level1');
+    }, 60000);
+  });
+});
+
 describe('test_case:case1', () => {
   const test_fn = traceAsync('case1', 'null', [['impl', 'string']], 'positional', async (impl) => {
     FireBamlEvent.tags({

@@ -28,10 +28,7 @@ date: {//BAML_CLIENT_REPLACE_ME_MAGIC_input.message_date//}
 message: {//BAML_CLIENT_REPLACE_ME_MAGIC_input.message//}
 ---
 
-Output json format:
-"Category as string"[]
-
-JSON:\
+JSON array of categories that match:\
 `;
 
 const deserializer = new Deserializer<Category[]>(schema, {
