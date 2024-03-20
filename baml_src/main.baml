@@ -8,6 +8,6 @@ generator lang_typescript {
   test_command "npm run baml-test --"
   // This command is used by "baml update-client" to install
   // dependencies to your language environment
-  install_command "npm install"
-  package_version_command "npm list"
+  install_command "npm install @boundaryml/baml-core"
+  package_version_command "npm list @boundaryml/baml-core"
 }
