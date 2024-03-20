@@ -113,9 +113,14 @@ registerEnumDeserializer(schema.definitions.Category, {
 
 });
 
-registerObjectDeserializer(schema.definitions.Education, { });
+registerObjectDeserializer(schema.definitions.Education, {
 
-registerObjectDeserializer(schema.definitions.Resume, { });
+});
+
+registerObjectDeserializer(schema.definitions.Resume, {
+
+});
 
 
 export { schema }
+

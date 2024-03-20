@@ -9,11 +9,11 @@
 import { clientManager } from '@boundaryml/baml-core/client_manager';
 
 
-import dotenv from 'dotenv';
-    let env = dotenv.config();
+import { loadEnvVars } from '@boundaryml/baml-core';
+    loadEnvVars();
 
 const GPT3 = clientManager.createClient('GPT3', 'baml-openai-chat', {
-    model: "gpt-3",
+    model: "gpt-3.5-turbo",
     api_key: process.env.OPENAI_API_KEY
 });
 
@@ -29,3 +29,4 @@ const GPT4Turbo = clientManager.createClient('GPT4Turbo', 'baml-openai-chat', {
 
 
 export { GPT3, GPT4, GPT4Turbo }
+

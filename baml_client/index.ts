@@ -5,11 +5,11 @@
 // @ts-nocheck
 /* eslint-disable */
 
-import dotenv from 'dotenv';
-let env = dotenv.config();
-
+import { loadEnvVars } from "@boundaryml/baml-core"
 import * as f from "./function"
 import "./impls"
+
+loadEnvVars()
 
 const BamlClient = {
   ClassifyMessage: f.ClassifyMessage,
@@ -17,4 +17,7 @@ const BamlClient = {
 }
 
 export default BamlClient
+
+export { DeserializerException } from "@boundaryml/baml-core/deserializer/diagnostics"
+
 

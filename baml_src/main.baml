@@ -5,12 +5,9 @@ generator lang_typescript {
   project_root "../"
   // This command is used by "baml test" to run tests
   // defined in the playground
-  // NPM: npm explore @boundaryml/baml-core -- jest
-  // YARN: yarn jest
-  // PNPM: pnpm exec jest
-  test_command "npm run baml_test -- --runInBand"
+  test_command "infisical run -- npm run baml-test --"
   // This command is used by "baml update-client" to install
   // dependencies to your language environment
-  install_command "npm install @boundaryml/baml-core"
-  package_version_command "npm list @boundaryml/baml-core"
+  install_command "npm install"
+  package_version_command "npm list"
 }

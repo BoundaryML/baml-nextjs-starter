@@ -7,10 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "baml_test": "jest"
+    "baml-test": "jest"
   },
   "dependencies": {
-    "@boundaryml/baml-core": "file:../gloo-lang/clients/ts",
+    "@boundaryml/baml-core": "^1.0.4",
     "next": "14.1.2",
     "react": "^18",
     "react-dom": "^18"

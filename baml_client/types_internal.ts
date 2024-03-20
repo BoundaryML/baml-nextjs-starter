@@ -102,3 +102,4 @@ class InternalResume implements Resume {
 
 
 export { InternalEducation, InternalResume }
+

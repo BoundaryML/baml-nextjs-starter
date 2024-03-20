@@ -164,3 +164,4 @@ const ExtractResume = createExtractResumeInstance();
 
 
 export { ClassifyMessage, IClassifyMessage, ClassifyMessageFunction, ExtractResume, IExtractResume, ExtractResumeFunction }
+
